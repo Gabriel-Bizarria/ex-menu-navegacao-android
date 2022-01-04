@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ContatosApp</string>
+    <string name="menu_1">Menu 1</string>
+    <string name="menu_2">Menu 2</string>
+    <string name="open_drawer">Abrir</string>
+    <string name="close_drawer">Fechar</string>
+
+    <string name="example_name">Nome do contato</string>
+    <string name="example_phone">(00)00000-0000</string>
+</resources>
