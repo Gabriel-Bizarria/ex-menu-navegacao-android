@@ -5,7 +5,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.Settings.Global.putString
+import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
@@ -39,6 +39,7 @@ class MainActivity : AppCompatActivity(), ClickItemContactListener {
         initDrawer()
         fetchListContact()
         bindViews()
+        //throw NullPointerException()
     }
 
     private fun fetchListContact(){
@@ -60,7 +61,10 @@ class MainActivity : AppCompatActivity(), ClickItemContactListener {
     }
 
     private fun getInstanceSharedPreferences() : SharedPreferences{
-        return getSharedPreferences("com.taskplanner.contatosapp.PREFERENCES", Context.MODE_PRIVATE)
+        return getSharedPreferences(
+            "com.taskplanner.contatosapp.PREFERENCES",
+            Context.MODE_PRIVATE
+        )
     }
 
     //Inicia o menu lateral (ou Drawer)
@@ -113,11 +117,13 @@ class MainActivity : AppCompatActivity(), ClickItemContactListener {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when(item.itemId){
             R.id.item_menu1 ->{
+                Log.i("Menu 1", "Clicou no menu 1")
                 showToast("Você clicou no menu 1")
                 true
             }
 
             R.id.item_menu2 ->{
+                Log.i("Menu 2", "Clicou no menu 2")
                 showToast("Você clicou no menu 2")
                 true
             }
